@@ -32,6 +32,7 @@
 | Android | 0  | 1 |
 | VS Code Extensions | 0 | 1 |
 | Lua | 4 | 3 |
+| GitHub Actions | 1 | 3 |
 
 ---
 
