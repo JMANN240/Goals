@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Create identity file
+      env:
+        DEPLOYMENTKEY: ${{ secrets.SSH_KEY }}
+      run: |
+        echo "$DEPLOYMENTKEY" | base64 --decode > deployment.key
+        chmod 400 deployment.key
+    - name: Update Thumbsup on production server
+      run: |
+        ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i deployment.key ubuntu@3.139.67.197 echo THIS IS A TEST > test.txt

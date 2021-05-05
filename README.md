@@ -30,7 +30,8 @@
 | C# | 4  | 4 |
 | Unity | 3  | 4 |
 | Android | 0  | 1 |
-| VS Code Extensions | 0  | 1 |
+| VS Code Extensions | 0 | 1 |
+| Lua | 4 | 3 |
 
 ---
 
